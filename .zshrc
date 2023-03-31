@@ -21,7 +21,6 @@ PS1='%n@%m %~$ '
 export PATH=$PATH:~/scripts
 PATH="$PATH:$HOME/.opam/default/bin"
 export TERMINAL=/usr/local/bin/st
-
 fpath=(/home/juchap/scripts/.zsh/zsh-completions/src $fpath)
 fpath=(/home/juchap/scripts/.zsh/.zprompts $fpath)
 
@@ -30,29 +29,18 @@ autoload -Uz promptinit
 autoload -Uz compinit
 promptinit
 compinit
+
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '@%b'
-#zstyle ':completion:*' menu select
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%{$fg[white]%}[%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%m | %~$ %{$fg[blue]%}${vcs_info_msg_0_}%{$fg[white]%}] '
 neofetch
-
-
-#exec startx
-#while true
-#	do
-#	/usr/bin/dwm 2> /dev/null
-#done
-
-#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
-#  exec startx &>/dev/null 
-#fi
 
 #plugins
 source /home/juchap/scripts/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
