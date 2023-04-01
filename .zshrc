@@ -25,6 +25,8 @@ fpath=(/home/juchap/scripts/.zsh/zsh-completions/src $fpath)
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/.opam/default/bin:$PATH"
 export TERMINAL="/usr/local/bin/st:$PATH"
+export PATH="$HOME/juchap/.dwm:$PATH"
+export PATH="$HOME/juchap/.local:$PATH"
 fpath=(/home/juchap/scripts/.zsh/.zprompts $fpath)
 
 autoload -U colors && colors
