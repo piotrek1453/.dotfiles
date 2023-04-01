@@ -15,12 +15,11 @@ alias pacs='sudo pacman -S'
 alias pacup='sudo pacman -Syu'
 alias yays='yay -S'
 alias yayup='yay -Syu'
+alias python='python3'
+alias pip='pip3'
 
 PS1='%n@%m %~$ '
 #extra paths
-export PATH=$PATH:~/scripts
-PATH="$PATH:$HOME/.opam/default/bin"
-export TERMINAL=/usr/local/bin/st
 fpath=(/home/juchap/scripts/.zsh/zsh-completions/src $fpath)
 fpath=(/home/juchap/scripts/.zsh/.zprompts $fpath)
 
@@ -49,3 +48,4 @@ source /home/juchap/scripts/.zsh/zsh-history-substring-search/zsh-history-substr
 
 # opam configuration
 [[ ! -r /home/juchap/.opam/opam-init/init.zsh ]] || source /home/juchap/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+

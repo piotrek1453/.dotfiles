@@ -2,8 +2,8 @@
 #
 #~/.xinitrc
 /home/juchap/dwm/dom.sh &
+/home/juchap/scripts/gdrive.sh &
 xrdb -I$HOME ~/.Xresources &
-#(sleep 3; picom) &
 setxkbmap pl &
 sleep 1 && feh --bg-scale /home/juchap/dwm/wallpaper.jpg &
 sleep 1 && slstatus &
