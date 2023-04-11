@@ -1,6 +1,7 @@
 #!/bin/zsh
 #
 #~/.xinitrc
+udiskie &
 /home/juchap/.dwm/dom.sh &
 xrdb -I$HOME ~/.Xresources &
 setxkbmap pl &
