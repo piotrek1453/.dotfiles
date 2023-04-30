@@ -2,4 +2,3 @@
 #
 #
 #
-ZDOTDIR=~/.zsh
