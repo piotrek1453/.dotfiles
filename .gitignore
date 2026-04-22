@@ -13,3 +13,7 @@ lazy-lock.json
 
 # TeX
 texmf/ls-R
+
+# Firefox user.js
+.mozilla/firefox/arkenfox/user.js
+
