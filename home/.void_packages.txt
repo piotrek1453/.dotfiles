@@ -8,7 +8,7 @@ fish-shell
 git
 base-devel
 ccache
-nodejs
+pnpm
 ## linters/formatters
 ruff
 ## languages/compilers
