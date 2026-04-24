@@ -64,9 +64,11 @@ libreoffice-still
 libreoffice-still-pl
 
 # other stuff
+stow
 htop
 mpv
 sndio
+power-profiles-daemon
 ## firewall
 firewalld
 ## music player

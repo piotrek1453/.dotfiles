@@ -34,7 +34,7 @@ zathura-pdf-mupdf
 vscode
 
 # fonts
-powerline-fonts
+# powerline-fonts # not in void repo, workaround needed
 nerd-fonts-ttf
 
 # engineering
@@ -64,9 +64,11 @@ libreoffice
 libreoffice-i18n-pl
 
 # other stuff
+stow
 htop
 mpv
 sndio
+power-profiles-daemon
 ## firewall
 ufw
 ## music player
