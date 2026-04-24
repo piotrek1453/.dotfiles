@@ -7,6 +7,7 @@ fish_variables*
 # Add exceptions by hand if I ever start
 .config/fish/completions/*
 .config/fish/functions/*
+.config/fish/fish_plugins
 
 # nvim
 lazy-lock.json
