@@ -3,7 +3,6 @@
 
 # except
 !update-arkenfox.sh
-!user.js
 !user-overrides.js
 !arkenfox-upstream/
 !arkenfox-upstream/**
