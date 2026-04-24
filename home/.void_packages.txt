@@ -6,6 +6,7 @@ fish-shell
 
 # dev tools
 git
+base-devel
 ccache
 ## linters/formatters
 # markdownlint-cli2 # not in void repo, workaround needed
@@ -30,8 +31,6 @@ xclip
 xdotool
 zathura
 zathura-pdf-mupdf
-### vscode
-vscode
 
 # fonts
 # powerline-fonts # not in void repo, workaround needed
@@ -67,6 +66,7 @@ libreoffice-i18n-pl
 stow
 htop
 mpv
+yt-dlp
 sndio
 power-profiles-daemon
 ## firewall
@@ -78,7 +78,7 @@ darktable
 gimp
 kolourpaint
 inkscape
-## various downloaders and unpackers for pacman to work faster
+## various downloaders and unpackers 
 aria2
 rsync
 pigz

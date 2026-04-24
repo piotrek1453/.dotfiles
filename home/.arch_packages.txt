@@ -6,6 +6,7 @@ fish
 
 # dev tools
 git
+base-devel
 ccache
 ## linters/formatters
 markdownlint-cli2
@@ -67,6 +68,7 @@ libreoffice-still-pl
 stow
 htop
 mpv
+yt-dlp
 sndio
 power-profiles-daemon
 ## firewall
