@@ -1,0 +1,94 @@
+# terminal emulator
+kitty
+
+# shell
+fish
+
+# dev tools
+git
+ccache
+## linters/formatters
+markdownlint-cli2
+prettier
+ruff
+## languages/compilers
+rustup
+python
+clang
+mold
+### lua
+lua
+luarocks
+## editors
+### nvim + stuff for it to work as configured
+neovim
+imagemagick
+powerline
+fd
+xclip
+#### latex/pdf
+xdotool
+zathura
+zathura-pdf-mupdf 
+### vscode
+visual-studio-code-insiders-bin
+
+# fonts
+powerline-fonts
+ttf-jetbrains-mono-nerd
+
+# engineering
+## CAD
+freecad
+kicad
+## embedded tools
+moserial
+gtkwave
+pulseview
+sigrok-firmware-fx2lafw
+
+# browser
+firefox
+firefoxpwa
+thunderbird
+thunderbird-i18n-pl
+
+# btrfs tools
+btrfs-assistant
+btrfs-progs
+btrfsmaintenance
+snapper
+
+# office suite
+libreoffice-still
+libreoffice-still-pl
+
+# other stuff
+htop
+mpv
+sndio
+## firewall
+firewalld
+## music player
+deadbeef
+## photos development
+darktable
+gimp
+kolourpaint
+inkscape
+## various downloaders and unpackers for pacman to work faster
+aria2
+rsync
+pigz
+pbzip2
+xz
+zstd
+lrzip
+lzop
+lz4
+plzip
+## network
+qbittorrent
+tigervnc
+wireshark-qt
+reflector

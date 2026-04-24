@@ -4,5 +4,6 @@
 # except
 !update-arkenfox.sh
 !user-overrides.js
-!arkenfox-upstream/
+!arkenfox-upstream
 !arkenfox-upstream/**
+!.gitignore

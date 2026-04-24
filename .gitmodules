@@ -1,6 +1,7 @@
-[submodule "texmf/tex/latex/TeX-templates"]
-	path = texmf/tex/latex/TeX-templates
+
+[submodule "home/texmf/tex/latex/TeX-templates"]
+	path = home/texmf/tex/latex/TeX-templates
 	url = https://github.com/sjijon/TeX-templates.git
-[submodule ".mozilla/firefox/arkenfox/arkenfox-upstream"]
-	path = .mozilla/firefox/arkenfox/arkenfox-upstream
+[submodule "home/.mozilla/firefox/arkenfox/arkenfox-upstream"]
+	path = home/.mozilla/firefox/arkenfox/arkenfox-upstream
 	url = https://github.com/arkenfox/user.js.git

@@ -1,11 +1,14 @@
 # arch.dotfiles
 
-My dotfiles I use on Arch, will probably work on other distros as well
+My dotfiles, list of packages and scripts for Arch Linux
 
-To be used with stow so just run
+To install/update stuff from home
 
 ```
-stow .
+./install_arch.sh
 ```
 
-in root of repo to use
+in home dir of repo
+
+For the rest (i.e. system): best to copy manually, maybe symlink or also use
+stow for that if you feel adventurous
