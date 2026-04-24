@@ -8,8 +8,22 @@ REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
 # install system packages
-awk '!/^\s*($|#)/ {print $1}' "$REPO_ROOT/home/.arch_packages.txt" |
-	xargs paru -S --needed --noconfirm
+source /etc/os-release
+echo "Detected OS: ${NAME}"
+case "$ID" in
+arch)
+	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.arch_packages.txt" |
+		paru -S --needed --noconfirm -
+	;;
+void)
+	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.void_packages.txt" |
+		xargs sudo xbps-install -Sy
+	;;
+*)
+	echo "Unsupported OS: ${NAME}"
+	exit 1
+	;;
+esac
 
 # set Rust toolchain to nightly
 rustup toolchain install nightly

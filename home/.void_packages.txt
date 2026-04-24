@@ -2,14 +2,14 @@
 kitty
 
 # shell
-fish
+fish-shell
 
 # dev tools
 git
 ccache
 ## linters/formatters
-markdownlint-cli2
-prettier
+# markdownlint-cli2 # not in void repo, workaround needed
+# prettier # not in void repo, workaround needed
 ruff
 ## languages/compilers
 rustup
@@ -22,8 +22,8 @@ luarocks
 ## editors
 ### nvim + stuff for it to work as configured
 neovim
-imagemagick
-powerline
+ImageMagick
+# powerline # not in void repo, workaround needed
 fd
 xclip
 #### latex/pdf
@@ -31,11 +31,11 @@ xdotool
 zathura
 zathura-pdf-mupdf
 ### vscode
-visual-studio-code-insiders-bin
+vscode
 
 # fonts
 powerline-fonts
-ttf-jetbrains-mono-nerd
+nerd-fonts-ttf
 
 # engineering
 ## CAD
@@ -49,26 +49,26 @@ sigrok-firmware-fx2lafw
 
 # browser
 firefox
-firefoxpwa
+# firefoxpwa # not in void repo, workaround needed
 thunderbird
 thunderbird-i18n-pl
 
-# btrfs tools
-btrfs-assistant
-btrfs-progs
-btrfsmaintenance
-snapper
+# btrfs tools # not in void repo, workaround needed
+# btrfs-assistant
+# btrfs-progs
+# btrfsmaintenance
+# snapper
 
 # office suite
-libreoffice-still
-libreoffice-still-pl
+libreoffice
+libreoffice-i18n-pl
 
 # other stuff
 htop
 mpv
 sndio
 ## firewall
-firewalld
+ufw
 ## music player
 deadbeef
 ## photos development
@@ -91,4 +91,3 @@ plzip
 qbittorrent
 tigervnc
 wireshark-qt
-reflector

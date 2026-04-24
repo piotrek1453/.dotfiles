@@ -1,11 +1,12 @@
 # arch.dotfiles
 
-My dotfiles, list of packages and scripts for Arch Linux
+My dotfiles, list of packages and scripts for Arch Linux. Also now in process of
+making it usable for Void Linux.
 
 To install/update stuff from home
 
 ```
-./install_arch.sh
+./install.sh
 ```
 
 in home dir of repo
