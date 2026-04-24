@@ -21,6 +21,8 @@ void)
 	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.void_packages.txt" |
 		xargs sudo xbps-install -Sy -u
 	rustup-init -y --default-toolchain nightly --profile default
+	# install js stuff not in Void repos
+	npm install -g markdownlint-cli2 prettier
 	# install vscode
 	pushd home/ || exit
 	./.install_vscode.sh

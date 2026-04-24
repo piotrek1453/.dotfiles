@@ -8,9 +8,8 @@ fish-shell
 git
 base-devel
 ccache
+nodejs
 ## linters/formatters
-# markdownlint-cli2 # not in void repo, workaround needed
-# prettier # not in void repo, workaround needed
 ruff
 ## languages/compilers
 rustup
@@ -24,7 +23,6 @@ luarocks
 ### nvim + stuff for it to work as configured
 neovim
 ImageMagick
-# powerline # not in void repo, workaround needed
 fd
 xclip
 #### latex/pdf
@@ -33,7 +31,6 @@ zathura
 zathura-pdf-mupdf
 
 # fonts
-# powerline-fonts # not in void repo, workaround needed
 nerd-fonts-ttf
 
 # engineering
@@ -48,15 +45,12 @@ sigrok-firmware-fx2lafw
 
 # browser
 firefox
-# firefoxpwa # not in void repo, workaround needed
 thunderbird
 thunderbird-i18n-pl
 
-# btrfs tools # not in void repo, workaround needed
-# btrfs-assistant
-# btrfs-progs
-# btrfsmaintenance
-# snapper
+# btrfs tools
+btrfs-progs
+timeshift
 
 # office suite
 libreoffice

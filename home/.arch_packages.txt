@@ -24,7 +24,6 @@ luarocks
 ### nvim + stuff for it to work as configured
 neovim
 imagemagick
-powerline
 fd
 xclip
 #### latex/pdf
@@ -35,7 +34,6 @@ zathura-pdf-mupdf
 visual-studio-code-insiders-bin
 
 # fonts
-powerline-fonts
 ttf-jetbrains-mono-nerd
 
 # engineering
