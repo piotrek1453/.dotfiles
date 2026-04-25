@@ -23,7 +23,7 @@ void)
 		xargs sudo xbps-install -Sy -u
 	rustup-init -y --default-toolchain nightly --profile default
 	# install vscode
-	pushd home/ || exit
+	pushd home/.scripts || exit
 	./install_vscode.sh
 	popd
 	;;
