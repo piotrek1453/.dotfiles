@@ -1,10 +1,11 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
 SCRIPT_PATH="$(readlink -f "$0")"
 SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
 REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)"
+export REPO_ROOT
 cd "$REPO_ROOT"
 
 # install system packages + setup rust/rustup
@@ -12,18 +13,18 @@ source /etc/os-release
 echo "Detected OS: ${NAME}"
 case "$ID" in
 arch)
-	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.arch_packages.txt" |
+	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/arch_packages.txt" |
 		paru -S --needed --noconfirm -
 	rustup toolchain install nightly
 	rustup default nightly
 	;;
 void)
-	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.void_packages.txt" |
+	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/void_packages.txt" |
 		xargs sudo xbps-install -Sy -u
 	rustup-init -y --default-toolchain nightly --profile default
 	# install vscode
 	pushd home/ || exit
-	./.install_vscode.sh
+	./install_vscode.sh
 	popd
 	;;
 *)
@@ -32,15 +33,20 @@ void)
 	;;
 esac
 
-# install fisher and tide theme
-curl -sL https://git.io/fisher | fish -c "source; fisher install jorgebucaran/fisher; fisher install IlanCosman/tide@v6"
-# tide configure # run by hand to set up the theme
+# pnpm setup
+pushd "$REPO_ROOT/home/.scripts" || exit
+./pnpm_install.sh
+popd
 
 # download git submodules
 git -C "$REPO_ROOT" submodule update --init --recursive
 
 # create symlinks
 stow -d "$REPO_ROOT/home" -t "$HOME" --adopt .
+
+# install fisher and tide theme
+curl -sL https://git.io/fisher | fish -c "source; fisher install jorgebucaran/fisher; fisher install IlanCosman/tide@v6"
+# tide configure # run by hand to set up the theme
 
 # setup Firefox profile
 FIREFOX_DIR="$HOME/.mozilla/firefox/arkenfox"

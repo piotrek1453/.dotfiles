@@ -2,15 +2,15 @@
 kitty
 
 # shell
-fish
+fish-shell
 
 # dev tools
 git
 base-devel
 ccache
+pnpm
+podman
 ## linters/formatters
-markdownlint-cli2
-prettier
 ruff
 ## languages/compilers
 rustup
@@ -23,18 +23,16 @@ luarocks
 ## editors
 ### nvim + stuff for it to work as configured
 neovim
-imagemagick
+ImageMagick
 fd
 xclip
 #### latex/pdf
 xdotool
 zathura
 zathura-pdf-mupdf
-### vscode
-visual-studio-code-insiders-bin
 
 # fonts
-ttf-jetbrains-mono-nerd
+nerd-fonts-ttf
 
 # engineering
 ## CAD
@@ -48,19 +46,16 @@ sigrok-firmware-fx2lafw
 
 # browser
 firefox
-firefoxpwa
 thunderbird
 thunderbird-i18n-pl
 
 # btrfs tools
-btrfs-assistant
 btrfs-progs
-btrfsmaintenance
-snapper
+timeshift
 
 # office suite
-libreoffice-still
-libreoffice-still-pl
+libreoffice
+libreoffice-i18n-pl
 
 # other stuff
 stow
@@ -70,7 +65,7 @@ yt-dlp
 sndio
 power-profiles-daemon
 ## firewall
-firewalld
+ufw
 ## music player
 deadbeef
 ## photos development
@@ -78,7 +73,7 @@ darktable
 gimp
 kolourpaint
 inkscape
-## various downloaders and unpackers for pacman to work faster
+## various downloaders and unpackers 
 aria2
 rsync
 pigz
@@ -93,4 +88,3 @@ plzip
 qbittorrent
 tigervnc
 wireshark-qt
-reflector

@@ -16,8 +16,6 @@ alias pacman=sudo pacman
 if test -d $HOME/Tools/Gowin/IDE/bin
     fish_add_path $HOME/Tools/Gowin/IDE/bin
 end
-## my scripts
-fish_add_path $HOME/.scripts
 ## Xilinx tools
 ### Xilinx base path
 set xilinx_root $HOME/Tools/Xilinx
@@ -30,10 +28,13 @@ fish_add_path /home/$USER/.local/bin
 # display full path in prompt
 set -U fish_prompt_pwd_dir_length 0
 
-# >>> coursier install directory >>>
-set -gx PATH "$PATH:$HOME/.local/share/coursier/bin"
-# <<< coursier install directory <<<
-
 # >>> rust binaries >>>
 set -gx PATH "$PATH:$HOME/.cargo/bin"
 # <<< rust binaries <<<
+
+# pnpm
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

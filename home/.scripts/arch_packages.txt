@@ -2,13 +2,14 @@
 kitty
 
 # shell
-fish-shell
+fish
 
 # dev tools
 git
 base-devel
 ccache
 pnpm
+# podman # TODO: restore this after migration on arch
 ## linters/formatters
 ruff
 ## languages/compilers
@@ -22,16 +23,18 @@ luarocks
 ## editors
 ### nvim + stuff for it to work as configured
 neovim
-ImageMagick
+imagemagick
 fd
 xclip
 #### latex/pdf
 xdotool
 zathura
 zathura-pdf-mupdf
+### vscode
+visual-studio-code-insiders-bin
 
 # fonts
-nerd-fonts-ttf
+ttf-jetbrains-mono-nerd
 
 # engineering
 ## CAD
@@ -45,16 +48,19 @@ sigrok-firmware-fx2lafw
 
 # browser
 firefox
+firefoxpwa
 thunderbird
 thunderbird-i18n-pl
 
 # btrfs tools
+btrfs-assistant
 btrfs-progs
-timeshift
+btrfsmaintenance
+snapper
 
 # office suite
-libreoffice
-libreoffice-i18n-pl
+libreoffice-still
+libreoffice-still-pl
 
 # other stuff
 stow
@@ -64,7 +70,7 @@ yt-dlp
 sndio
 power-profiles-daemon
 ## firewall
-ufw
+firewalld
 ## music player
 deadbeef
 ## photos development
@@ -72,7 +78,7 @@ darktable
 gimp
 kolourpaint
 inkscape
-## various downloaders and unpackers 
+## various downloaders and unpackers for pacman to work faster
 aria2
 rsync
 pigz
@@ -87,3 +93,4 @@ plzip
 qbittorrent
 tigervnc
 wireshark-qt
+reflector
