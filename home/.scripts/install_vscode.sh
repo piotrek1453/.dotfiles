@@ -54,23 +54,24 @@ EOF
 sudo chmod +x "$BIN_PATH"
 
 # --- desktop entry ---
-echo "==> Creating desktop entry"
-
-sudo tee "$DESKTOP_FILE" >/dev/null <<EOF
-[Desktop Entry]
-Name=VS Code Insiders
-Comment=Code Editing. Redefined.
-Exec=$BIN_PATH %F
-Icon=$INSTALL_DIR/resources/app/resources/linux/code.png
-Type=Application
-Categories=Development;IDE;
-StartupNotify=true
-EOF
-
-# --- refresh desktop db (optional) ---
-if command -v update-desktop-database >/dev/null 2>&1; then
-	sudo update-desktop-database >/dev/null 2>&1 || true
-fi
+# TODO: uncomment someday
+# echo "==> Creating desktop entry"
+#
+# sudo tee "$DESKTOP_FILE" >/dev/null <<EOF
+# [Desktop Entry]
+# Name=VS Code Insiders
+# Comment=Code Editing. Redefined.
+# Exec=$BIN_PATH %F
+# Icon=$INSTALL_DIR/resources/app/resources/linux/code.png
+# Type=Application
+# Categories=Development;IDE;
+# StartupNotify=true
+# EOF
+#
+# # --- refresh desktop db (optional) ---
+# if command -v update-desktop-database >/dev/null 2>&1; then
+# 	sudo update-desktop-database >/dev/null 2>&1 || true
+# fi
 
 echo "==> Done!"
 echo "Run with: code-insiders"
