@@ -8,6 +8,7 @@ fish
 git
 base-devel
 ccache
+npm
 pnpm
 # podman # TODO: restore this after migration on arch
 ## linters/formatters
@@ -15,6 +16,7 @@ ruff
 ## languages/compilers
 rustup
 python
+python313
 clang
 mold
 ### lua
