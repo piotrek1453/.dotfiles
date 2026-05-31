@@ -9,7 +9,10 @@ git
 base-devel
 ccache
 pnpm
+# container stuff
 podman
+netavark
+aardvark-dns
 ## linters/formatters
 ruff
 ## languages/compilers

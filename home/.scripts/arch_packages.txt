@@ -10,7 +10,11 @@ base-devel
 ccache
 npm
 pnpm
-# podman # TODO: restore this after migration on arch
+# container stuff
+podman
+netavark
+aardvark-dns
+podman-docker
 ## linters/formatters
 ruff
 ## languages/compilers
