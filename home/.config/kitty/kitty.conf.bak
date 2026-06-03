@@ -1,8 +1,0 @@
-font_family JetBrainsMono Nerd Font
-font_size 14
-
-
-# BEGIN_KITTY_THEME
-# Base2Tone Lavender Dark
-include current-theme.conf
-# END_KITTY_THEME

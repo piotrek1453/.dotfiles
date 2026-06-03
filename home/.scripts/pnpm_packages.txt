@@ -1,2 +1,0 @@
-markdownlint-cli2
-prettier
