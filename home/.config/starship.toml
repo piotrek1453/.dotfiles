@@ -1,7 +1,6 @@
-add_newline = true
+add_newline = false
 
-format = """
-[╭─](bold blue)$os$directory$git_branch$git_status$line_break[╰─](bold blue)$character"""
+format = "[╭─](bold blue)$os$directory$git_branch$git_status\n[╰─](bold blue)$character"
 
 right_format = "$cmd_duration"
 
