@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Top-level setup script for this config
+
 set -e
 
 SCRIPT_PATH="$(readlink -f "$0")"
@@ -8,37 +10,59 @@ REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)"
 export REPO_ROOT
 cd "$REPO_ROOT"
 
+# download git submodules
+git -C "$REPO_ROOT" submodule update --init --recursive
+
 # install system packages + setup rust/rustup
 source /etc/os-release
 echo "Detected OS: ${NAME}"
 case "$ID" in
 arch)
-  awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/arch_packages.txt" |
-    paru -S --needed --noconfirm -
-  rustup toolchain install nightly
-  rustup default nightly
-  pushd home/.scripts || exit
-  ./haskell_install.sh
-  popd
-  ;;
-void)
-  awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/void_packages.txt" |
-    xargs sudo xbps-install -Sy -u
-  rustup-init -y --default-toolchain nightly --profile default
-  # install vscode
-  pushd home/.scripts || exit
-  ./install_vscode.sh
-  ./haskell_install.sh
-  popd
-  ;;
-*)
-  echo "Unsupported OS: ${NAME}"
-  exit 1
-  ;;
-esac
+	# rustup install for paru build
+	if ! command -v rustup >/dev/null 2>&1; then
+		sudo pacman -S --noconfirm --needed rustup base-devel
+		# install nightly rust toolchain and set as default
+		rustup toolchain install nightly
+		rustup default nightly
+	fi
 
-# download git submodules
-git -C "$REPO_ROOT" submodule update --init --recursive
+	# paru install
+	if ! command -v paru >/dev/null 2>&1; then
+		# cd into paru dir and build
+		pushd "$REPO_ROOT/paru" || exit
+		makepkg -si --noconfirm
+		popd
+	fi
+
+	# parse packages and install with paru
+	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/arch_packages.txt" |
+		paru -S --needed --noconfirm -
+
+	# execute other scripts
+	pushd home/.scripts || exit
+	# install haskell
+	./haskell_install.sh
+	popd
+	;;
+
+void)
+	awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/void_packages.txt" |
+		xargs sudo xbps-install -Sy -u
+	rustup-init -y --default-toolchain nightly --profile default
+
+	# execute other scripts
+	pushd home/.scripts || exit
+	# install vscode
+	./install_vscode.sh
+	# install haskell
+	./haskell_install.sh
+	popd
+	;;
+*)
+	echo "Unsupported OS: ${NAME}"
+	exit 1
+	;;
+esac
 
 # create symlinks
 stow -d "$REPO_ROOT/home" -t "$HOME" --adopt .
@@ -55,7 +79,7 @@ popd
 # setup Firefox profile
 FIREFOX_DIR="$HOME/.mozilla/firefox/arkenfox"
 if [ -d "$FIREFOX_DIR" ]; then
-  pushd "$FIREFOX_DIR" || exit
-  ./update-arkenfox.sh
-  popd || exit
+	pushd "$FIREFOX_DIR" || exit
+	./update-arkenfox.sh
+	popd || exit
 fi
