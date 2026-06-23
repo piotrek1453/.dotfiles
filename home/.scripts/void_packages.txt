@@ -86,6 +86,8 @@ lrzip
 lzop
 lz4
 plzip
+curl
+
 ## network
 qbittorrent
 tigervnc

@@ -17,6 +17,9 @@ arch)
     paru -S --needed --noconfirm -
   rustup toolchain install nightly
   rustup default nightly
+  pushd home/.scripts || exit
+  ./haskell_install.sh
+  popd
   ;;
 void)
   awk '!/^\s*($|#)/' "$REPO_ROOT/home/.scripts/void_packages.txt" |
@@ -25,6 +28,7 @@ void)
   # install vscode
   pushd home/.scripts || exit
   ./install_vscode.sh
+  ./haskell_install.sh
   popd
   ;;
 *)

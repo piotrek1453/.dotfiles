@@ -5,10 +5,6 @@ end
 # disable greeting
 set fish_greeting
 
-# Aliases
-alias yay=paru
-alias pacman=sudo pacman
-
 # User paths
 ## Gowin IDE
 ## for IDE installed from AUR, doesn't work for now so import from manually installed one is needed as below
@@ -32,9 +28,16 @@ set -U fish_prompt_pwd_dir_length 0
 set -gx PATH "$PATH:$HOME/.cargo/bin"
 # <<< rust binaries <<<
 
+## >>> haskell >>>
+# Add GHCup to PATH
+if test -d $HOME/.ghcup/bin
+    fish_add_path $HOME/.ghcup/bin
+end
+# <<< haskell <<<
+
 # pnpm
 set -gx PNPM_HOME "/home/juchap/.local/share/pnpm"
 if not string match -q -- "$PNPM_HOME/bin" $PATH
-  set -gx PATH "$PNPM_HOME/bin" $PATH
+    set -gx PATH "$PNPM_HOME/bin" $PATH
 end
 # pnpm end
