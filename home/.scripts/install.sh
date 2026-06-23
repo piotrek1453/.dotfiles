@@ -42,6 +42,8 @@ arch)
 	pushd home/.scripts || exit
 	# install haskell
 	./haskell_install.sh
+	# bash rice
+	./bash_overhaul.sh
 	popd
 	;;
 

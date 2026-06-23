@@ -8,7 +8,7 @@ set fish_greeting
 # User paths
 ## Gowin IDE
 ## for IDE installed from AUR, doesn't work for now so import from manually installed one is needed as below
-## fish_add_path /opt/gowin-eda-ide/bin 
+## fish_add_path /opt/gowin-eda-ide/bin
 if test -d $HOME/Tools/Gowin/IDE/bin
     fish_add_path $HOME/Tools/Gowin/IDE/bin
 end
@@ -36,7 +36,7 @@ end
 # <<< haskell <<<
 
 # pnpm
-set -gx PNPM_HOME "/home/juchap/.local/share/pnpm"
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 if not string match -q -- "$PNPM_HOME/bin" $PATH
     set -gx PATH "$PNPM_HOME/bin" $PATH
 end

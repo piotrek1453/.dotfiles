@@ -1,0 +1,40 @@
+add_newline = true
+
+format = """
+[╭─](bold blue)$os$directory$git_branch$git_status$line_break[╰─](bold blue)$character"""
+
+right_format = "$cmd_duration"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[os]
+disabled = false
+format = "[$symbol ](bold white)"
+
+[os.symbols]
+Arch = ""
+
+[directory]
+format = "[  $path ](bold cyan)"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+format = "[ $symbol$branch ](bold purple)"
+
+[git_status]
+format = "[$all_status$ahead_behind ](bold yellow)"
+conflicted = "✖"
+ahead = "⇡"
+behind = "⇣"
+modified = "+"
+staged = "●"
+untracked = "?"
+deleted = "✘"
+
+[cmd_duration]
+min_time = 500
+format = "[ 󱎫 $duration ](bold yellow)"

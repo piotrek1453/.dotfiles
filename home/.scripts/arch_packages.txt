@@ -8,6 +8,7 @@ fish
 git
 base-devel
 ccache
+sccache
 npm
 # container stuff
 podman

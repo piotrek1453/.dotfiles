@@ -8,6 +8,7 @@ fish-shell
 git
 base-devel
 ccache
+sccache
 # container stuff
 podman
 netavark
@@ -75,7 +76,7 @@ darktable
 gimp
 kolourpaint
 inkscape
-## various downloaders and unpackers 
+## various downloaders and unpackers
 aria2
 rsync
 pigz
