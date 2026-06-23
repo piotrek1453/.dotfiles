@@ -92,3 +92,6 @@ curl
 qbittorrent
 tigervnc
 wireshark-qt
+
+# misc
+less

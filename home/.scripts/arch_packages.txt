@@ -101,3 +101,6 @@ qbittorrent
 tigervnc
 wireshark-qt
 reflector
+
+# misc
+less

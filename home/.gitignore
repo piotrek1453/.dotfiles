@@ -14,3 +14,13 @@ lazy-lock.json
 
 # TeX
 texmf/ls-R
+
+# mozilla stuffs to ignore
+.mozilla/firefox/*.default*
+.mozilla/firefox/*.default-release*
+.mozilla/firefox/Crash Reports/
+.mozilla/firefox/Profile Groups/
+.mozilla/firefox/installs.ini
+.mozilla/firefox/profiles.ini
+.mozilla/firefox/*
+!.mozilla/firefox/user.js
