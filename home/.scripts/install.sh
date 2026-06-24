@@ -66,30 +66,8 @@ void)
 	;;
 esac
 
-# create symlinks with stow
-STOW_DIR="$REPO_ROOT/home"
-
-cd "$STOW_DIR"
-
-# packages
-PACKAGES=(
-  bash
-  fish
-  kitty
-  nvim
-  starship
-  mpv
-  zathura
-  systemd
-  lspmux
-)
-
-for pkg in "${PACKAGES[@]}"; do
-  if [ -d "$pkg" ]; then
-    echo "[STOW] $pkg"
-    stow -d "$STOW_DIR" -t "$HOME" "$pkg"
-  fi
-done
+# create symlinks
+stow -d "$REPO_ROOT/home" -t "$HOME" .
 
 # install fisher and tide theme
 curl -sL https://git.io/fisher | fish -c "source; fisher install jorgebucaran/fisher; fisher install IlanCosman/tide@v6"
