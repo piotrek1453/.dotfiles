@@ -74,3 +74,5 @@ fi
 export PROMPT_DIRTRIM=0
 
 fi
+
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
