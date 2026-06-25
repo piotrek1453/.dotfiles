@@ -2,7 +2,7 @@
 set -e
 
 # Check if GHC is already installed
-if command -v ghc >/dev/null 2>&1; then
+if command -v ghc > /dev/null 2>&1; then
   echo "[INFO] Haskell is already installed."
   exit 0
 fi

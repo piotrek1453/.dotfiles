@@ -9,70 +9,61 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-
 ### BEGIN GIMMICKS CONFIG ###
 
 # Enable bash completion
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-fi
-
-# Enable ble.sh (autosuggestions and syntax highlighting)
-if [ -f "$HOME/.blesh/out/ble.sh" ]; then
-    source "$HOME/.blesh/out/ble.sh"
-fi
-
-# ble.sh suggestion colors
-bleopt highlight_syntax=true
-bleopt highlight_variable=true
-# suggestion (ghost text) color
-ble-face auto_complete='fg=gray'
+[[ $PS1 &&
+    ! ${BASH_COMPLETION_VERSINFO:-} &&
+    -f /usr/share/bash-completion/bash_completion ]] \
+    && . /usr/share/bash-completion/bash_completion
 
 # Enable Starship prompt
-if command -v starship >/dev/null 2>&1; then
+if command -v starship > /dev/null 2>&1; then
     eval "$(starship init bash)"
 fi
 
 # === interactive shell only ===
 if [[ $- == *i* ]]; then
 
-# === PATH additions ===
+    # === PATH additions ===
 
-# Gowin IDE
-if [ -d "$HOME/Tools/Gowin/IDE/bin" ]; then
-    export PATH="$HOME/Tools/Gowin/IDE/bin:$PATH"
-fi
+    # Gowin IDE
+    if [ -d "$HOME/Tools/Gowin/IDE/bin" ]; then
+        export PATH="$HOME/Tools/Gowin/IDE/bin:$PATH"
+    fi
 
-# Xilinx tools
-XILINX_ROOT="$HOME/Tools/Xilinx"
-if [ -d "$XILINX_ROOT/2025.2/Vitis/bin" ]; then
-    export PATH="$XILINX_ROOT/2025.2/Vitis/bin:$PATH"
-fi
+    # Xilinx tools
+    XILINX_ROOT="$HOME/Tools/Xilinx"
+    if [ -d "$XILINX_ROOT/2025.2/Vitis/bin" ]; then
+        export PATH="$XILINX_ROOT/2025.2/Vitis/bin:$PATH"
+    fi
 
-if [ -d "$XILINX_ROOT/2025.2/Vivado/bin" ]; then
-    export PATH="$XILINX_ROOT/2025.2/Vivado/bin:$PATH"
-fi
+    if [ -d "$XILINX_ROOT/2025.2/Vivado/bin" ]; then
+        export PATH="$XILINX_ROOT/2025.2/Vivado/bin:$PATH"
+    fi
 
-# local bin
-export PATH="$HOME/.local/bin:$PATH"
+    # local bin
+    export PATH="$HOME/.local/bin:$PATH"
 
-# rust
-export PATH="$HOME/.cargo/bin:$PATH"
+    # rust
+    export PATH="$HOME/.cargo/bin:$PATH"
 
-# haskell (ghcup)
-if [ -d "$HOME/.ghcup/bin" ]; then
-    export PATH="$HOME/.ghcup/bin:$PATH"
-fi
+    # haskell (ghcup)
+    if [ -d "$HOME/.ghcup/bin" ]; then
+        export PATH="$HOME/.ghcup/bin:$PATH"
+    fi
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-if [ -d "$PNPM_HOME/bin" ]; then
-    export PATH="$PNPM_HOME/bin:$PATH"
-fi
+    # pnpm
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+    if [ -d "$PNPM_HOME/bin" ]; then
+        export PATH="$PNPM_HOME/bin:$PATH"
+    fi
 
-# prompt setting equivalent (fish_prompt_pwd_dir_length)
-export PROMPT_DIRTRIM=0
+    # prompt setting equivalent (fish_prompt_pwd_dir_length)
+    export PROMPT_DIRTRIM=0
 
 fi
 
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+# Flyline - enhanced Bash experience
+enable -f "$HOME/.local/lib/libflyline.so" flyline

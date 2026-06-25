@@ -1,8 +1,27 @@
 add_newline = false
 
-format = "[╭─](bold blue)$os$directory$git_branch$git_status\n[╰─](bold blue)$character"
+format = """
+[╭─](bold blue)$os$directory\
+$python\
+$nodejs\
+$rust\
+$golang\
+$git_branch$git_status\
+$fill\
+[ ](bold blue)[ $time ](bold yellow)\
+\n[╰─](bold blue)$character
+"""
 
-right_format = "$cmd_duration"
+right_format = ""
+
+[fill]
+symbol = "─"
+style = "bold blue"
+
+[time]
+disabled = false
+format = "$time"
+time_format = "%H:%M:%S"
 
 [character]
 success_symbol = "[❯](bold green)"
@@ -16,7 +35,7 @@ format = "[$symbol ](bold white)"
 Arch = ""
 
 [directory]
-format = "[  $path ](bold cyan)"
+format = "[  $path ](bold cyan)"
 truncation_length = 3
 truncate_to_repo = true
 
@@ -37,3 +56,15 @@ deleted = "✘"
 [cmd_duration]
 min_time = 500
 format = "[ 󱎫 $duration ](bold yellow)"
+
+[python]
+disabled = false
+
+[nodejs]
+disabled = false
+
+[rust]
+disabled = false
+
+[golang]
+disabled = false

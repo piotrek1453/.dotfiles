@@ -9,7 +9,7 @@ DESKTOP_FILE="/usr/local/share/applications/code-insiders.desktop"
 TMP_DIR="$(mktemp -d)"
 
 cleanup() {
-	rm -rf "$TMP_DIR"
+  rm -rf "$TMP_DIR"
 }
 trap cleanup EXIT
 
@@ -18,7 +18,7 @@ echo "==> Installing / Updating VSCode Insiders"
 # --- download ---
 echo "==> Downloading..."
 wget -q "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64" \
-	-O "$TMP_DIR/vscode-insiders.tar.gz"
+  -O "$TMP_DIR/vscode-insiders.tar.gz"
 
 # --- extract ---
 echo "==> Extracting..."
@@ -27,8 +27,8 @@ tar -xzf "$TMP_DIR/vscode-insiders.tar.gz" -C "$TMP_DIR"
 EXTRACTED_DIR="$(find "$TMP_DIR" -maxdepth 1 -type d -name "VSCode-linux-x64")"
 
 if [[ -z "$EXTRACTED_DIR" ]]; then
-	echo "ERROR: extraction failed"
-	exit 1
+  echo "ERROR: extraction failed"
+  exit 1
 fi
 
 # --- install (atomic replace) ---
@@ -44,7 +44,7 @@ sudo mv "$INSTALL_DIR.tmp" "$INSTALL_DIR"
 # --- wrapper ---
 echo "==> Creating wrapper"
 
-sudo tee "$BIN_PATH" >/dev/null <<'EOF'
+sudo tee "$BIN_PATH" > /dev/null << 'EOF'
 #!/usr/bin/env sh
 # VSCode Insiders launcher (non-blocking)
 

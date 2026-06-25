@@ -3,6 +3,8 @@ kitty
 
 # shell
 fish
+bash-completion
+starship
 
 # dev tools
 git
