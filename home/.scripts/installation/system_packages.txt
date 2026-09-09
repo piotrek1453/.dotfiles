@@ -163,3 +163,8 @@ tailscale
 less
 keepassxc
 virt-manager
+
+# label printer
+cups
+cups-pdf
+system-config-printer
