@@ -163,6 +163,7 @@ tailscale
 less
 keepassxc
 virt-manager
+dbeaver
 
 # label printer
 cups
