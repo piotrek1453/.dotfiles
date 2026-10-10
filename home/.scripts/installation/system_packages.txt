@@ -148,6 +148,7 @@ nmap
 tcpdump
 traceroute
 inetutils
+bind
 ### nat traversal
 zerotier-one
 
