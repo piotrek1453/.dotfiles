@@ -90,6 +90,9 @@ thunderbird-i18n-pl
 
 # communication and social
 discord
+telegram-desktop
+jami-qt
+jami-daemon
 
 # btrfs tools
 btrfs-assistant
@@ -145,7 +148,8 @@ nmap
 tcpdump
 traceroute
 inetutils
-tailscale
+### nat traversal
+zerotier-one
 
 ## latex/tex extras
 # tex-fmt-bin
