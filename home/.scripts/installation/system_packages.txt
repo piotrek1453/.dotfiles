@@ -150,7 +150,7 @@ traceroute
 inetutils
 bind
 ### nat traversal
-zerotier-one
+tailscale
 
 ## latex/tex extras
 # tex-fmt-bin
