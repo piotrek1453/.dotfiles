@@ -58,6 +58,11 @@ visual-studio-code-insiders-bin
 
 # desktop (kde/plasma)
 plasma-meta
+flatpak
+discover
+flatpak-kcm
+xdg-desktop-portal
+xdg-desktop-portal-kde
 dolphin
 ark
 gwenview
@@ -87,12 +92,6 @@ firefox
 firefoxpwa
 thunderbird
 thunderbird-i18n-pl
-
-# communication and social
-discord
-telegram-desktop
-jami-qt
-jami-daemon
 
 # btrfs tools
 btrfs-assistant

@@ -1,0 +1,4 @@
+org.telegram.desktop
+com.discordapp.Discord
+com.jami.Jami
+com.sindresorhus.Caprine

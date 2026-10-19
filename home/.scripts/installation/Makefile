@@ -3,9 +3,9 @@ SHELL := /usr/bin/bash
 INSTALLATION_DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 REPO_ROOT := $(shell git -C "$(INSTALLATION_DIR)" rev-parse --show-toplevel 2>/dev/null || realpath "$(INSTALLATION_DIR)/../../..")
 
-.PHONY: all help prerequisites submodules rust paru packages haskell stow systemd pnpm hooks system-config firefox
+.PHONY: all help prerequisites submodules rust paru packages flatpak haskell stow systemd pnpm hooks system-config firefox
 
-all: prerequisites submodules rust paru packages haskell stow systemd pnpm hooks
+all: prerequisites submodules rust paru packages flatpak haskell stow systemd pnpm hooks
 
 help:
 	@printf '%s\n' \
@@ -18,6 +18,7 @@ help:
 		'  rust           Install rustup and select the nightly toolchain' \
 		'  paru           Build and install the local paru package' \
 		'  packages       Install packages from system_packages.txt' \
+		'  flatpak        Install Flatpak applications from flatpak_packages.txt' \
 		'  haskell        Install GHCup, GHC, and Cabal' \
 		'  stow           Link the dotfiles into HOME' \
 		'  systemd        Enable and start the configured user systemd units' \
@@ -40,6 +41,9 @@ paru: rust
 
 packages: paru
 	"$(INSTALLATION_DIR)/packages.sh"
+
+flatpak: packages
+	"$(INSTALLATION_DIR)/flatpak.sh"
 
 haskell: packages
 	"$(INSTALLATION_DIR)/haskell.sh"

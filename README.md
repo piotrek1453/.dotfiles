@@ -15,6 +15,7 @@ step, for example:
 
 ```sh
 make -C home/.scripts/installation packages
+make -C home/.scripts/installation flatpak
 make -C home/.scripts/installation stow
 make -C home/.scripts/installation pnpm
 make -C home/.scripts/installation hooks
@@ -37,9 +38,17 @@ on the current working directory or on an exported `REPO_ROOT`.
 The installer currently requires Arch Linux, Git, `sudo`, network access and a
 checkout of this repository. It installs system packages with `paru`, builds the
 local `paru` package when needed, configures Rust nightly, GHCup/GHC/Cabal and
-global pnpm packages, and links files from `home/` with GNU Stow. Re-running the
+global pnpm packages and the Flatpak applications listed in
+`home/.scripts/installation/flatpak_packages.txt`, and links files from `home/`
+with GNU Stow. Re-running the
 targets is supported; already configured components are detected and skipped
 where possible.
+
+The `flatpak` target installs applications for the current user only. It uses
+the default Flatpak sandbox without adding filesystem or device access, while
+`xdg-desktop-portal` and `xdg-desktop-portal-kde` provide controlled KDE
+integration for file pickers, URLs and MIME handlers. Discover and `flatpak-kcm`
+can manage the same user installation.
 
 The `hooks` target runs `pre-commit install` in the repository. Hook definitions
 are versioned in `.pre-commit-config.yaml`; the configured hooks remove trailing
