@@ -3,3 +3,4 @@ com.discordapp.Discord
 net.jami.Jami
 chat.simplex.simplex
 com.sindresorhus.Caprine
+org.kicad.KiCad
