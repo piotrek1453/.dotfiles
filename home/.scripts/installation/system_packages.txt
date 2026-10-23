@@ -19,9 +19,10 @@ bc
 opencode
 # container stuff
 podman
+podman-compose
+podman-docker
 netavark
 aardvark-dns
-podman-docker
 ## linters/formatters
 ruff
 shfmt
