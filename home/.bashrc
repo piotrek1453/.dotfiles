@@ -75,3 +75,11 @@ enable -f "$HOME/.local/lib/libflyline.so" flyline
 # set cursor backend to terminal so that Kitty lets
 # computer shut down when flyline enabled
 flyline set-cursor --backend terminal
+# workaround for copilot getting stuck with commands
+# also make sure to set this env var in vscode terminal
+if [[ -n "${COPILOT_TERMINAL:-}" ]]; then
+	RPS1=''
+	flyline set-cursor --backend terminal --interpolate none
+	flyline editor --show-inline-history false
+	flyline suggestions --auto-suggest false
+fi
