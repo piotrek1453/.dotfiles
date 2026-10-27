@@ -81,6 +81,7 @@ ttf-jetbrains-mono-nerd
 # engineering
 ## CAD
 freecad
+kicad
 ## embedded tools
 moserial
 gtkwave
