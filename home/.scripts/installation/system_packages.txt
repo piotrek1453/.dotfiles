@@ -74,6 +74,7 @@ network-manager-applet
 polkit-qt5
 isoimagewriter
 qrca
+kfind
 
 # fonts
 ttf-jetbrains-mono-nerd
@@ -138,6 +139,7 @@ lrzip
 lzop
 lz4
 curl
+unrar
 
 ## network
 qbittorrent
