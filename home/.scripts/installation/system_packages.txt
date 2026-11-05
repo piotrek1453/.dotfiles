@@ -10,6 +10,7 @@ git
 base-devel
 ccache
 sccache
+zccache
 npm
 pnpm
 fzf
@@ -17,6 +18,7 @@ just
 tree
 bc
 opencode
+hyperfine
 # container stuff
 podman
 podman-compose
@@ -35,6 +37,7 @@ rustup
 python
 python313
 clang
+lld
 mold
 pyright
 rust-analyzer
@@ -172,6 +175,8 @@ less
 keepassxc
 virt-manager
 dbeaver
+wine
+winetricks
 
 # label printer
 cups
