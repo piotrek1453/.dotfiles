@@ -106,6 +106,14 @@ btrfs-progs
 btrfsmaintenance
 snapper
 
+# AppArmor and audit notifications
+apparmor
+audit
+python-notify2
+python-psutil
+refind
+tk
+
 # office suite
 libreoffice-still
 libreoffice-still-pl
