@@ -81,6 +81,8 @@ kfind
 
 # fonts
 ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols-mono
+noto-fonts-emoji
 
 # engineering
 ## CAD
