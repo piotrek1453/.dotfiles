@@ -35,7 +35,6 @@ shellcheck
 ## languages/compilers
 rustup
 python
-python313
 clang
 lld
 mold
